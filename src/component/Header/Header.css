@@ -1,0 +1,9 @@
+.logo_container {
+    width: 100%;
+    height: 100px; /* Ajustez la hauteur en fonction de vos besoins */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+  }
+  
