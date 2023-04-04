@@ -7,7 +7,8 @@ export default function Header() {
     className='logo_container'>
         < FaGithub
         size="2rem"
-        color="black" />
+        color="black"
+        className='logo' />
 
     </div>
   )

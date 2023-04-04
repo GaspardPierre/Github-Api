@@ -9,8 +9,9 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    /* align-items: center; */
     background-color:#ECF0F1 ;
+    justify-content: center;
 
 }
 .searchBar__container{
