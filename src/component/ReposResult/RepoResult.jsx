@@ -4,110 +4,28 @@ import "./RepoResult.css";
 
 const src = "https://react.semantic-ui.com/images/avatar/large/daniel.jpg";
 
-export default function RepoResult() {
+export default function RepoResult({repos}) {
   return (
     <>
       <Container className="cards_container">
         <div className="card-container">
-        <div className="card-wrapper">
-          <Card className="custom-card">
-            <Image src={src} />
+          {repos.map((repo) => (
+
+          
+        // <div className="card-wrapper"
+        // >
+          <Card className="custom-card"
+          key={repo.id}>
+            <Image src={repo.owner.avatar_url} />
             <Card.Content>
-              <Card.Header>Titre 1</Card.Header>
+              <Card.Header>{repo.name}</Card.Header>
               <Card.Description>
-                Ceci est une description pour la première carte.
+              {repo.description}
               </Card.Description>
             </Card.Content>
           </Card>
-          </div>
-          <div className="card-wrapper">
-          <Card className="custom-card">
-            <Image src={src} />
-            <Card.Content>
-              <Card.Header>Titre 1</Card.Header>
-              <Card.Description>
-                Ceci est une description pour la première carte.
-              </Card.Description>
-            </Card.Content>
-          </Card>
-          </div>
-          <div className="card-wrapper">
-          <Card className="custom-card">
-            <Image src={src} />
-            <Card.Content>
-              <Card.Header>Titre 1</Card.Header>
-              <Card.Description>
-                Ceci est une description pour la première carte.
-              </Card.Description>
-            </Card.Content>
-          </Card>
-          </div>
-          <div className="card-wrapper">
-          <Card className="custom-card">
-            <Image src={src} />
-            <Card.Content>
-              <Card.Header>Titre 1</Card.Header>
-              <Card.Description>
-                Ceci est une description pour la première carte.
-              </Card.Description>
-            </Card.Content>
-          </Card>
-          </div>
-          <div className="card-wrapper">
-          <Card className="custom-card">
-            <Image src={src} />
-            <Card.Content>
-              <Card.Header>Titre 1</Card.Header>
-              <Card.Description>
-                Ceci est une description pour la première carte.
-              </Card.Description>
-            </Card.Content>
-          </Card>
-          </div>
-          <div className="card-wrapper">
-          <Card className="custom-card">
-            <Image src={src} />
-            <Card.Content>
-              <Card.Header>Titre 1</Card.Header>
-              <Card.Description>
-                Ceci est une description pour la première carte.
-              </Card.Description>
-            </Card.Content>
-          </Card>
-          </div>
-          <div className="card-wrapper">
-          <Card className="custom-card">
-            <Image src={src} />
-            <Card.Content>
-              <Card.Header>Titre 1</Card.Header>
-              <Card.Description>
-                Ceci est une description pour la première carte.
-              </Card.Description>
-            </Card.Content>
-          </Card>
-          </div>
-          <div className="card-wrapper">
-          <Card className="custom-card">
-            <Image src={src} />
-            <Card.Content>
-              <Card.Header>Titre 1</Card.Header>
-              <Card.Description>
-                Ceci est une description pour la première carte.
-              </Card.Description>
-            </Card.Content>
-          </Card>
-          </div>
-          <div className="card-wrapper">
-          <Card className="custom-card">
-            <Image src={src} />
-            <Card.Content>
-              <Card.Header>Titre 1</Card.Header>
-              <Card.Description>
-                Ceci est une description pour la première carte.
-              </Card.Description>
-            </Card.Content>
-          </Card>
-          </div>
+          // </div>
+          ))}
           </div>
      
       </Container>

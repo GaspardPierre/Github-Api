@@ -1,14 +1,14 @@
 import React from 'react'
-import { FaGithub } from 'react-icons/fa';
+import { Icon } from 'semantic-ui-react'
 
 export default function Header() {
   return (
     <div
     className='logo_container'>
-        < FaGithub
-        size="2rem"
-        color="black"
-        className='logo' />
+      
+        < Icon name='github'
+         size='huge'
+         className='logo'/>
 
     </div>
   )
