@@ -1,30 +1,21 @@
 import {React, useState } from 'react';
-
+import { useSelector , useDispatch} from 'react-redux';
+import { fetchRepos } from "../../store/repoSlice";
 import SearchContainer from '../SearchContainer/SearchContainer';
 import RepoResult from '../ReposResult/RepoResult';
 import Header from "../Header/Header";
 import "./App.css";
 
 export default function App() {
-  const [repos, setRepos ] = useState ([]);
-const [isLoading, setIsLoading ] = useState(false);
 
-  const handleSearchSubmit = async  (search) => {
-   setIsLoading(true);
+  const repos = useSelector((state) => state.repos.repos);
+  const isLoading = useSelector((state) => state.repos.isLoading);
+  const dispatch = useDispatch();
 
-   try {
-    const response = await fetch (`https://api.github.com/search/repositories?q=${search}`);
-    const reposData = await response.json();
-    console.log(reposData);
-    setRepos(reposData.items);
-    
-   }catch(error){
+  const handleSearchSubmit =(search) => {
+    dispatch(fetchRepos(search));
+  }
 
-    console.log("Erreur :", error);
-
-   }
-   setIsLoading(false)
-  };
   return (
     <div className="App__container">
       <main className="main__github__container">

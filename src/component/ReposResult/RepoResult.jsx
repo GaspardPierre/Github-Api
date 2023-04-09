@@ -8,14 +8,13 @@ export default function RepoResult({repos}) {
   return (
     <>
       <Container className="cards_container">
-        <div className="card-container">
-          {repos.map((repo) => (
-
-          
-        // <div className="card-wrapper"
-        // >
+      
+        <div className="card-container"
+       >
+       {repos.map((repo) => (
           <Card className="custom-card"
-          key={repo.id}>
+           key={repo.id}
+         >
             <Image src={repo.owner.avatar_url} />
             <Card.Content>
               <Card.Header>{repo.name}</Card.Header>
@@ -24,9 +23,11 @@ export default function RepoResult({repos}) {
               </Card.Description>
             </Card.Content>
           </Card>
-          // </div>
+          //  
           ))}
-          </div>
+           </div>
+        
+        
      
       </Container>
     </>
