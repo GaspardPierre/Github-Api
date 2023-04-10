@@ -20,6 +20,10 @@
     height: 250px;
     object-fit: cover;
   }
+  .button-container{
+    display: flex;
+    justify-content: center;
+  }
   
 
   .card-wrapper {

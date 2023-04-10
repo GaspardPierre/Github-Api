@@ -23,7 +23,7 @@ export default function SearchBar( { onSubmit,onLoad}) {
        className="searchbar"
        value= { search}
        onChange={handleOnChange} />
-          {onLoad && <Loader active inline />}
+          {onLoad && <Loader active inline='left' />}
       
        </form>
     </Segment>

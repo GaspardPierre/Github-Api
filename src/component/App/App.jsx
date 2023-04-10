@@ -9,6 +9,7 @@ import "./App.css";
 export default function App() {
 
   const repos = useSelector((state) => state.repos.repos);
+  console.log(repos)
   const isLoading = useSelector((state) => state.repos.isLoading);
   const dispatch = useDispatch();
 
