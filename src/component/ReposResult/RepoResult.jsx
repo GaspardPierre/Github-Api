@@ -1,8 +1,7 @@
 import { React, useState } from "react";
 import { Container, Card, Image, Button } from "semantic-ui-react";
+import MessageResult from "../MessageResult/MessageResult";
 import "./RepoResult.css";
-
-const src = "https://react.semantic-ui.com/images/avatar/large/daniel.jpg";
 
 export default function RepoResult({ repos }) {
   const [reposNumber, setReposNumber] = useState(8);
@@ -19,16 +18,27 @@ export default function RepoResult({ repos }) {
   };
   return (
     <>
-      <Container className="cards_container">
+    <Container className="cards_container">
+       <MessageResult 
+    reposNumber={repos.length}
+    />
+      
         <div className="card-container">
           {repos.slice(0, reposNumber).map((repo) => (
-            <Card className="custom-card" key={repo.id}>
-              <Image src={repo.owner.avatar_url} />
+            <Card className="custom-card" key={repo.id}
+            href={repo.html_url}>
+             
+              <Image src={repo.owner.avatar_url}/>
+          
               <Card.Content>
+              {/* <Link to={repo.html_url}> */}
                 <Card.Header>{repo.name}</Card.Header>
                 <Card.Description>{repo.description}</Card.Description>
+                {/* </Link> */}
               </Card.Content>
+          
             </Card>
+            
             //
           ))}
         </div>

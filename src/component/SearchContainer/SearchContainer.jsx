@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { Container} from 'semantic-ui-react';
 import SearchBar from '../SearchBar/SearchBar';
-import MessageResult from '../MessageResult/MessageResult';
+
 
  
- export default function SearchContainer({onSearchSubmit, repos, isLoading}) {
+ export default function SearchContainer({onSearchSubmit, isLoading}) {
 
 
    return (
@@ -16,9 +17,7 @@ import MessageResult from '../MessageResult/MessageResult';
     onSubmit={onSearchSubmit}
     onLoad={isLoading}
     />
-    <MessageResult 
-    reposNumber={repos.length}
-    />
+ 
    
 
     
@@ -27,3 +26,8 @@ import MessageResult from '../MessageResult/MessageResult';
    );
  }
  
+
+ SearchContainer.PropTypes = {
+  onSearchSubmit: PropTypes.func.isRequired,
+  isLoading: PropTypes.bool.isRequired,
+ }

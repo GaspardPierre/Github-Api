@@ -1,5 +1,7 @@
 import React, { useState} from 'react'
 import {  Input,Segment, Loader } from "semantic-ui-react";
+import PropTypes from 'prop-types';
+
 import "./SearchBar.css"
 
 export default function SearchBar( { onSubmit,onLoad}) {
@@ -12,6 +14,8 @@ export default function SearchBar( { onSubmit,onLoad}) {
   const handleSubmit = (event) => {
     event.preventDefault();
     onSubmit(search);
+    setSearch('');
+    
   }
   return (
     < Segment textAlign="center" basic>
@@ -30,4 +34,10 @@ export default function SearchBar( { onSubmit,onLoad}) {
 
   
   );
+}
+
+SearchBar.prototypes ={
+  onSubmit: PropTypes.func.isRequired,
+  onLoad: PropTypes.bool.isRequired,
+
 }
