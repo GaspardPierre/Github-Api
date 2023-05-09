@@ -1,17 +1,19 @@
-import React, { useState} from 'react'
+import React, { ChangeEvent, FunctionComponent, FormEvent, useState} from 'react'
 import {  Input,Segment, Loader } from "semantic-ui-react";
-import PropTypes from 'prop-types';
-
 import "./SearchBar.css"
 
-export default function SearchBar( { onSubmit,onLoad}) {
-  const [search, setSearch] = useState('');
+interface  SearchBarProps {
+  onSubmit: (search: string) => void;
+  onLoad: boolean;  
+}
+const SearchBar :   FunctionComponent < SearchBarProps > = ( { onSubmit,onLoad }) => {
+  const [search, setSearch] = useState<string>('');
 
-  const handleOnChange =(event) => {
+  const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
-  }
+  };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = (event : FormEvent< HTMLFormElement>) => {
     event.preventDefault();
     onSubmit(search);
     setSearch('');
@@ -36,8 +38,3 @@ export default function SearchBar( { onSubmit,onLoad}) {
   );
 }
 
-SearchBar.prototypes ={
-  onSubmit: PropTypes.func.isRequired,
-  onLoad: PropTypes.bool.isRequired,
-
-}

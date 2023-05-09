@@ -28,7 +28,7 @@ export default function App() {
       <main className="main__github__container">
         <Header />
         <SearchContainer onSearchSubmit={handleSearchSubmit}
-        repos={repos}
+       
         isLoading={isLoading} />
         <RepoResult 
         repos={repos} 

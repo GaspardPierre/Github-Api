@@ -1,12 +1,17 @@
-import { React, useState } from "react";
+import React, { FunctionComponent, useState } from "react";
 import { Container, Card, Image, Button } from "semantic-ui-react";
 import MessageResult from "../MessageResult/MessageResult";
+import { Repo } from "../../types/type";
 import "./RepoResult.css";
 
-export default function RepoResult({ repos }) {
-  const [reposNumber, setReposNumber] = useState(8);
-  const [showMore, setShowMore] = useState(true);
-  const [showLessButton, setShowLessButton] = useState(false);
+interface RepoResultProps {
+  repos: Repo[];
+};
+
+const RepoResult : FunctionComponent< RepoResultProps> = ({ repos } : RepoResultProps)=> {
+  const [reposNumber, setReposNumber] = useState<number>(8);
+  const [showMore, setShowMore] = useState<boolean>(true);
+  const [showLessButton, setShowLessButton] = useState<boolean>(false);
 
   const handleShoMore = () => {
     setReposNumber(reposNumber + 8);
@@ -54,3 +59,4 @@ export default function RepoResult({ repos }) {
     </>
   );
 }
+export default RepoResult;

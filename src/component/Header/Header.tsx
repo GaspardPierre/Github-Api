@@ -1,7 +1,7 @@
-import React from 'react'
+import React ,{ FunctionComponent} from 'react'
 import { Icon } from 'semantic-ui-react'
 
-export default function Header() {
+const Header : FunctionComponent = () =>{
   return (
     <div
     className='logo_container'>
@@ -13,3 +13,5 @@ export default function Header() {
     </div>
   )
 }
+
+export default Header;

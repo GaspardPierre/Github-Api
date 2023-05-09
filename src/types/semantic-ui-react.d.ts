@@ -1,4 +1,5 @@
 declare module "semantic-ui-react" {
+  import { Icon , IconProps } from "semantic-ui-react/dist/commonjs/elements/Icon";
     import { Button, ButtonProps } from "semantic-ui-react/dist/commonjs/elements/Button";
     import { Card, CardProps } from "semantic-ui-react/dist/commonjs/views/Card";
     import { Container, ContainerProps } from "semantic-ui-react/dist/commonjs/elements/Container";
@@ -8,6 +9,8 @@ declare module "semantic-ui-react" {
     import { Loader, LoaderProps} from "semantic-ui-react/dist/commonjs/elements/Loader"
     import { Message,MessageProps } from "semantic-ui-react/dist/commonjs/collections/Message"
     export {
+      Icon,
+      IconProps,
       Button,
       ButtonProps,
       Card,
