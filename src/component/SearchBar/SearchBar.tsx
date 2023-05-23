@@ -37,4 +37,4 @@ const SearchBar :   FunctionComponent < SearchBarProps > = ( { onSubmit,onLoad }
   
   );
 }
-
+export default SearchBar;
